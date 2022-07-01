@@ -1,0 +1,40 @@
+`define number_of_bytes 16
+module top_uart_trans (
+    input clk,
+    output wire TXD
+    );
+
+    reg [`number_of_bytes*8 - 1:0]data = 0;
+
+    wire st = &delay_cn & EoBit;
+    wire prev_st = delay_cn[9] & ~(|(delay_cn[8:0])) & EoBit; //(delay_cn == 10'b1000000000)
+    reg t_prev_st = 0;
+
+    reg [9:0]delay_cn = 0;
+    wire [3:0]T_bit;
+    wire EoBit;
+
+    wire [9:0]par;
+    wire [9:0]saw;
+
+    Gen_parabola Gen_parabola (.clk(clk), .ce(prev_st), .par(par));
+    Gen_saw Gen_saw (.clk(clk), .ce(prev_st), .saw(saw));
+    uart_trans uart_trans (.clk(clk), .st(st), .EoBit(EoBit), .TXD(TXD), .data(data));
+
+    always @(posedge clk)
+    begin
+        delay_cn <= EoBit ? delay_cn + 1 : delay_cn;
+
+        t_prev_st <= prev_st;
+        data[15:6] <= t_prev_st ? par : data[15:6];
+        data[31:22] <= t_prev_st ? 10'd256 : data[31:22];
+        data[47:38] <= t_prev_st ? -1 * 10'd256 : data[47:38];
+        data[63:54] <= t_prev_st ? saw : data[63:54];
+        
+    end
+
+
+    
+
+endmodule
+

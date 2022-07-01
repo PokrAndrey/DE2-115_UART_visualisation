@@ -1,0 +1,308 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision - 10;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x1f3d690 .scope module, "test_Par" "test_Par" 2 2;
+ .timescale -9 -10;
+v0x1f8cbe0_0 .var "clk", 0 0;
+v0x1f8cdf0_0 .var "en_shift", 0 0;
+S_0x1f3d780 .scope module, "Gen_parabola" "Gen_parabola" 2 8, 3 1, S_0x1f3d690;
+ .timescale 0 0;
+P_0x1f3d878 .param/l "A" 3 7, +C4<0100000000>;
+P_0x1f3d8a0 .param/l "period" 3 8, +C4<01000000>;
+L_0x1f8c150 .functor OR 1, L_0x1f8cea0, L_0x1f8cfe0, C4<0>, C4<0>;
+L_0x1f8d320 .functor OR 1, L_0x1f8c150, L_0x1f8d230, C4<0>, C4<0>;
+L_0x1f8d590 .functor OR 1, L_0x1f8d320, L_0x1f8d460, C4<0>, C4<0>;
+L_0x1f8d6c0 .functor NOT 1, L_0x1f8d590, C4<0>, C4<0>, C4<0>;
+v0x1f3e050_0 .net *"_s0", 5 0, C4<111111>; 1 drivers
+v0x1f8bb30_0 .net *"_s10", 5 0, C4<001111>; 1 drivers
+v0x1f8bbd0_0 .net *"_s12", 0 0, L_0x1f8d230; 1 drivers
+v0x1f8bc70_0 .net *"_s14", 0 0, L_0x1f8d320; 1 drivers
+v0x1f8bd20_0 .net *"_s16", 5 0, C4<101111>; 1 drivers
+v0x1f8bdc0_0 .net *"_s18", 0 0, L_0x1f8d460; 1 drivers
+v0x1f8bea0_0 .net *"_s2", 0 0, L_0x1f8cea0; 1 drivers
+v0x1f8bf40_0 .net *"_s20", 0 0, L_0x1f8d590; 1 drivers
+v0x1f8c030_0 .net *"_s24", 19 0, C4<11111111111111111111>; 1 drivers
+v0x1f8c0d0_0 .net *"_s27", 19 0, L_0x1f8d7b0; 1 drivers
+v0x1f8c1d0_0 .net *"_s28", 19 0, L_0x1f8d900; 1 drivers
+v0x1f8c270_0 .net *"_s31", 10 0, C4<00000000000>; 1 drivers
+v0x1f8c380_0 .net *"_s32", 19 0, L_0x1f8db00; 1 drivers
+v0x1f8c420_0 .net *"_s4", 5 0, C4<011111>; 1 drivers
+v0x1f8c540_0 .net *"_s6", 0 0, L_0x1f8cfe0; 1 drivers
+v0x1f8c5e0_0 .net *"_s8", 0 0, L_0x1f8c150; 1 drivers
+v0x1f8c4a0_0 .net "change", 0 0, L_0x1f8d6c0; 1 drivers
+v0x1f8c730_0 .var "cn_period", 5 0;
+v0x1f8c850_0 .net "en_shift", 0 0, v0x1f8cdf0_0; 1 drivers
+v0x1f8c8d0_0 .var "mod_par", 8 0;
+v0x1f8c7b0_0 .net "par", 9 0, L_0x1f8dc40; 1 drivers
+v0x1f8ca00_0 .net "pixel_clk", 0 0, v0x1f8cbe0_0; 1 drivers
+v0x1f8c950_0 .var "sign", 0 0;
+v0x1f8cb40_0 .var "t_en_shift", 0 0;
+v0x1f8caa0_0 .var "up", 0 0;
+v0x1f8cc90_0 .var "x", 3 0;
+E_0x1f514e0 .event posedge, v0x1f8ca00_0;
+L_0x1f8cea0 .cmp/eq 6, v0x1f8c730_0, C4<111111>;
+L_0x1f8cfe0 .cmp/eq 6, v0x1f8c730_0, C4<011111>;
+L_0x1f8d230 .cmp/eq 6, v0x1f8c730_0, C4<001111>;
+L_0x1f8d460 .cmp/eq 6, v0x1f8c730_0, C4<101111>;
+L_0x1f8d7b0 .arith/mult 20, v0x1f8c8d0_0, C4<11111111111111111111>;
+L_0x1f8d900 .concat [ 9 11 0 0], v0x1f8c8d0_0, C4<00000000000>;
+L_0x1f8db00 .functor MUXZ 20, L_0x1f8d900, L_0x1f8d7b0, v0x1f8c950_0, C4<>;
+L_0x1f8dc40 .part L_0x1f8db00, 0, 10;
+    .scope S_0x1f3d780;
+T_0 ;
+    %set/v v0x1f8cc90_0, 0, 4;
+    %end;
+    .thread T_0;
+    .scope S_0x1f3d780;
+T_1 ;
+    %set/v v0x1f8caa0_0, 1, 1;
+    %end;
+    .thread T_1;
+    .scope S_0x1f3d780;
+T_2 ;
+    %set/v v0x1f8c950_0, 0, 1;
+    %end;
+    .thread T_2;
+    .scope S_0x1f3d780;
+T_3 ;
+    %set/v v0x1f8cb40_0, 0, 1;
+    %end;
+    .thread T_3;
+    .scope S_0x1f3d780;
+T_4 ;
+    %set/v v0x1f8c730_0, 0, 6;
+    %end;
+    .thread T_4;
+    .scope S_0x1f3d780;
+T_5 ;
+    %set/v v0x1f8c8d0_0, 0, 9;
+    %end;
+    .thread T_5;
+    .scope S_0x1f3d780;
+T_6 ;
+    %wait E_0x1f514e0;
+    %load/v 8, v0x1f8c850_0, 1;
+    %jmp/0  T_6.0, 8;
+    %load/v 9, v0x1f8c730_0, 6;
+    %mov 15, 0, 26;
+    %addi 9, 1, 32;
+    %jmp/1  T_6.2, 8;
+T_6.0 ; End of true expr.
+    %load/v 41, v0x1f8c730_0, 6;
+    %mov 47, 0, 1;
+    %mov 48, 0, 25;
+    %jmp/0  T_6.1, 8;
+ ; End of false expr.
+    %blend  9, 41, 32; Condition unknown.
+    %jmp  T_6.2;
+T_6.1 ;
+    %mov 9, 41, 32; Return false value
+T_6.2 ;
+    %ix/load 0, 6, 0;
+    %assign/v0 v0x1f8c730_0, 0, 9;
+    %load/v 8, v0x1f8c730_0, 6;
+    %mov 14, 0, 1;
+    %cmpi/u 8, 0, 7;
+    %mov 8, 4, 1;
+    %load/v 9, v0x1f8c730_0, 6;
+    %cmpi/u 9, 31, 6;
+    %mov 9, 4, 1;
+    %load/v 10, v0x1f8c850_0, 1;
+    %and 9, 10, 1;
+    %or 8, 9, 1;
+    %jmp/0  T_6.3, 8;
+    %mov 9, 1, 1;
+    %jmp/1  T_6.5, 8;
+T_6.3 ; End of true expr.
+    %load/v 10, v0x1f8c730_0, 6;
+    %cmpi/u 10, 16, 6;
+    %mov 10, 4, 1;
+    %load/v 11, v0x1f8c730_0, 6;
+    %cmpi/u 11, 47, 6;
+    %mov 11, 4, 1;
+    %load/v 12, v0x1f8c850_0, 1;
+    %and 11, 12, 1;
+    %or 10, 11, 1;
+    %jmp/0  T_6.6, 10;
+    %mov 11, 0, 1;
+    %jmp/1  T_6.8, 10;
+T_6.6 ; End of true expr.
+    %load/v 12, v0x1f8caa0_0, 1;
+    %jmp/0  T_6.7, 10;
+ ; End of false expr.
+    %blend  11, 12, 1; Condition unknown.
+    %jmp  T_6.8;
+T_6.7 ;
+    %mov 11, 12, 1; Return false value
+T_6.8 ;
+    %jmp/0  T_6.4, 8;
+ ; End of false expr.
+    %blend  9, 11, 1; Condition unknown.
+    %jmp  T_6.5;
+T_6.4 ;
+    %mov 9, 11, 1; Return false value
+T_6.5 ;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x1f8caa0_0, 0, 9;
+    %load/v 8, v0x1f8c730_0, 6;
+    %cmpi/u 8, 63, 6;
+    %mov 8, 4, 1;
+    %load/v 9, v0x1f8c850_0, 1;
+    %and 8, 9, 1;
+    %jmp/0  T_6.9, 8;
+    %mov 9, 0, 1;
+    %jmp/1  T_6.11, 8;
+T_6.9 ; End of true expr.
+    %load/v 10, v0x1f8c730_0, 6;
+    %cmpi/u 10, 31, 6;
+    %mov 10, 4, 1;
+    %load/v 11, v0x1f8c850_0, 1;
+    %and 10, 11, 1;
+    %jmp/0  T_6.12, 10;
+    %mov 11, 1, 1;
+    %jmp/1  T_6.14, 10;
+T_6.12 ; End of true expr.
+    %load/v 12, v0x1f8c950_0, 1;
+    %jmp/0  T_6.13, 10;
+ ; End of false expr.
+    %blend  11, 12, 1; Condition unknown.
+    %jmp  T_6.14;
+T_6.13 ;
+    %mov 11, 12, 1; Return false value
+T_6.14 ;
+    %jmp/0  T_6.10, 8;
+ ; End of false expr.
+    %blend  9, 11, 1; Condition unknown.
+    %jmp  T_6.11;
+T_6.10 ;
+    %mov 9, 11, 1; Return false value
+T_6.11 ;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x1f8c950_0, 0, 9;
+    %load/v 8, v0x1f8c850_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x1f8cb40_0, 0, 8;
+    %load/v 8, v0x1f8caa0_0, 1;
+    %load/v 9, v0x1f8c850_0, 1;
+    %and 8, 9, 1;
+    %load/v 9, v0x1f8c4a0_0, 1;
+    %and 8, 9, 1;
+    %jmp/0  T_6.15, 8;
+    %load/v 9, v0x1f8cc90_0, 4;
+    %mov 13, 0, 28;
+    %addi 9, 1, 32;
+    %jmp/1  T_6.17, 8;
+T_6.15 ; End of true expr.
+    %load/v 41, v0x1f8caa0_0, 1;
+    %inv 41, 1;
+    %load/v 42, v0x1f8c850_0, 1;
+    %and 41, 42, 1;
+    %load/v 42, v0x1f8c4a0_0, 1;
+    %and 41, 42, 1;
+    %jmp/0  T_6.18, 41;
+    %load/v 42, v0x1f8cc90_0, 4;
+    %mov 46, 0, 28;
+    %subi 42, 1, 32;
+    %jmp/1  T_6.20, 41;
+T_6.18 ; End of true expr.
+    %load/v 74, v0x1f8cc90_0, 4;
+    %mov 78, 0, 28;
+    %jmp/0  T_6.19, 41;
+ ; End of false expr.
+    %blend  42, 74, 32; Condition unknown.
+    %jmp  T_6.20;
+T_6.19 ;
+    %mov 42, 74, 32; Return false value
+T_6.20 ;
+    %jmp/0  T_6.16, 8;
+ ; End of false expr.
+    %blend  9, 42, 32; Condition unknown.
+    %jmp  T_6.17;
+T_6.16 ;
+    %mov 9, 42, 32; Return false value
+T_6.17 ;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0x1f8cc90_0, 0, 9;
+    %load/v 8, v0x1f8caa0_0, 1;
+    %load/v 9, v0x1f8c850_0, 1;
+    %and 8, 9, 1;
+    %jmp/0  T_6.21, 8;
+    %load/v 9, v0x1f8c8d0_0, 9;
+    %mov 18, 0, 25;
+    %load/v 43, v0x1f8cc90_0, 4;
+    %mov 47, 0, 30;
+    %ix/load 0, 1, 0;
+    %mov 4, 0, 1;
+    %shiftl/i0  43, 34;
+    %add 9, 43, 34;
+    %addi 9, 1, 34;
+    %jmp/1  T_6.23, 8;
+T_6.21 ; End of true expr.
+    %load/v 43, v0x1f8caa0_0, 1;
+    %inv 43, 1;
+    %load/v 44, v0x1f8c850_0, 1;
+    %and 43, 44, 1;
+    %jmp/0  T_6.24, 43;
+    %load/v 44, v0x1f8c8d0_0, 9;
+    %mov 53, 0, 25;
+    %load/v 78, v0x1f8cc90_0, 4;
+    %mov 82, 0, 30;
+    %ix/load 0, 1, 0;
+    %mov 4, 0, 1;
+    %shiftl/i0  78, 34;
+    %sub 44, 78, 34;
+    %subi 44, 1, 34;
+    %jmp/1  T_6.26, 43;
+T_6.24 ; End of true expr.
+    %load/v 78, v0x1f8c8d0_0, 9;
+    %mov 87, 0, 25;
+    %jmp/0  T_6.25, 43;
+ ; End of false expr.
+    %blend  44, 78, 34; Condition unknown.
+    %jmp  T_6.26;
+T_6.25 ;
+    %mov 44, 78, 34; Return false value
+T_6.26 ;
+    %jmp/0  T_6.22, 8;
+ ; End of false expr.
+    %blend  9, 44, 34; Condition unknown.
+    %jmp  T_6.23;
+T_6.22 ;
+    %mov 9, 44, 34; Return false value
+T_6.23 ;
+    %ix/load 0, 9, 0;
+    %assign/v0 v0x1f8c8d0_0, 0, 9;
+    %jmp T_6;
+    .thread T_6;
+    .scope S_0x1f3d690;
+T_7 ;
+    %set/v v0x1f8cbe0_0, 0, 1;
+    %delay 10, 0;
+    %set/v v0x1f8cbe0_0, 1, 1;
+    %delay 10, 0;
+    %jmp T_7;
+    .thread T_7;
+    .scope S_0x1f3d690;
+T_8 ;
+    %set/v v0x1f8cdf0_0, 0, 1;
+    %delay 80, 0;
+    %set/v v0x1f8cdf0_0, 1, 1;
+    %delay 20, 0;
+    %jmp T_8;
+    .thread T_8;
+    .scope S_0x1f3d690;
+T_9 ;
+    %vpi_call 2 28 "$dumpvars";
+    %delay 408500, 0;
+    %vpi_call 2 29 "$finish";
+    %end;
+    .thread T_9;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "test_Par.v";
+    "Gen_parabola.v";

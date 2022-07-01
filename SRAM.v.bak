@@ -1,0 +1,33 @@
+module SRAM (
+    input pixel_clk,
+    input [15:0]SRAM_DQ,
+    input [11:0]counterPclkH,
+    input [9:0]counterLines,
+    output reg nCE = 0,
+    input nOE,
+    output reg nWE = 1,
+    output reg nLB = 0,
+    output reg nUB = 0,
+    output reg [7:0]RED = 0,
+    output reg [7:0]GREEN = 0,
+    output reg [7:0]BLUE = 0,
+    output reg [19:0]address = 0
+
+    );
+
+    reg en_change_addr = 0;
+    reg [15:0]DRd = 0;
+
+    always @(posedge pixel_clk)
+    begin
+        en_change_addr <= ~en_change_addr; 
+        address <= (~counterPclkH[0]) ? {1'b0, counterLines, counterPclkH[9:1]} : address;  
+
+        DRd <= (counterPclkH[0]) ? { {8{1'b0}}, DRd[15:8] } : SRAM_DQ;
+        RED <= {DRd[7:5], {5{1'b1}} };  
+        GREEN <= {DRd[4:2], {5{1'b1}} };
+        BLUE <= {DRd[1:0], {6{1'b1}} };   
+    end
+
+
+endmodule

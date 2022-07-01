@@ -1,0 +1,89 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'F78m75_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -1.289
+TNS   : -1.289
+
+Type  : Slow 1200mV 85C Model Setup 'button:button_0|prev_state'
+Slack : 0.210
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'F78m75_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.290
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'button:button_0|prev_state'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'button:button_0|prev_state'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'F78m75_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 6.054
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.819
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'F78m75_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -1.054
+TNS   : -1.054
+
+Type  : Slow 1200mV 0C Model Setup 'button:button_0|prev_state'
+Slack : 0.297
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'F78m75_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'button:button_0|prev_state'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'button:button_0|prev_state'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'F78m75_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 6.058
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.799
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'F78m75_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -0.801
+TNS   : -0.801
+
+Type  : Fast 1200mV 0C Model Setup 'button:button_0|prev_state'
+Slack : 0.626
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'F78m75_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.146
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'button:button_0|prev_state'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'button:button_0|prev_state'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'F78m75_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 6.101
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.400
+TNS   : 0.000
+
+------------------------------------------------------------

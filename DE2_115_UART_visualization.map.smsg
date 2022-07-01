@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at VGA_signals.v(40): always construct contains both blocking and non-blocking assignments File: /home/andrey/FPGA_Base/Progects/UART_Visualization/DE2_115_UART_visualization/VGA_signals.v Line: 40

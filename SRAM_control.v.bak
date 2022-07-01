@@ -1,0 +1,25 @@
+module SRAM_control (
+    input pixel_clk,
+    input R,
+    input S,
+    input op,
+    input [11:0]counterPclkH,
+    input column_clr,
+    input [8:0]shift_counter = 0,
+    output reg nCE = 0,
+    output reg nOE = 0,
+    output reg nWE = 1,
+    output reg nLB = 0,
+    output reg nUB = 0,
+    output reg clr = 0
+    );   
+
+    always @(posedge pixel_clk)
+    begin
+        clr <= R ? 0 : S ? 1 : clr; //clear
+        nWE <= (clr | ~op) ? shift_counter[0] ^ counterPclkH[0] : 1;
+        nLB <= (clr) ? 0 : ~op ?  shift_counter[0] : 1; 
+        nUB <= (clr) ? 0 : ~op ? ~shift_counter[0] : 1;
+    end
+
+endmodule

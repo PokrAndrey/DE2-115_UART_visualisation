@@ -1,0 +1,22 @@
+module button #(parameter x=18) (
+    input clk,
+    input key,
+    output wire moment_of_press;
+    );
+
+    reg [x-1:0]counter_press = 0;
+    reg [x-1:0]counter_depress = 0;
+    reg state;
+    reg prev_state;
+
+    always @(posedge clk)
+    begin
+        counter_press <= (key) ? 0 : counter_press + ~state;
+        counter_depress <= (~key) ? 0 : counter_depress + state;
+        state <= counter_press[x-1] ? 1 : (~counter_press[x-1] & counter_depress[x-1]) ? 0 : state;
+        prev_state <= state;
+    end
+
+    assign moment_of_press = state & ~prev_state;
+    
+endmodule 

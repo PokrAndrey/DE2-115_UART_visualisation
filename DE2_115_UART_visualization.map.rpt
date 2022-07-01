@@ -1,0 +1,237 @@
+Analysis & Synthesis report for DE2_115_UART_visualization
+Fri Jul 01 14:24:02 2022
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Fri Jul 01 14:24:02 2022           ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; DE2_115_UART_visualization                  ;
+; Top-level Entity Name              ; DE2_115_UART_visualization                  ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                              ;
++------------------------------------------------------------------+----------------------------+----------------------------+
+; Option                                                           ; Setting                    ; Default Value              ;
++------------------------------------------------------------------+----------------------------+----------------------------+
+; Device                                                           ; EP4CE115F29C7              ;                            ;
+; Top-level entity name                                            ; DE2_115_UART_visualization ; DE2_115_UART_visualization ;
+; Family name                                                      ; Cyclone IV E               ; Cyclone V                  ;
+; Maximum processors allowed for parallel compilation              ; 2                          ;                            ;
+; Use smart compilation                                            ; Off                        ; Off                        ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                         ; On                         ;
+; Enable compact report table                                      ; Off                        ; Off                        ;
+; Restructure Multiplexers                                         ; Auto                       ; Auto                       ;
+; Create Debugging Nodes for IP Cores                              ; Off                        ; Off                        ;
+; Preserve fewer node names                                        ; On                         ; On                         ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable                     ; Enable                     ;
+; Verilog Version                                                  ; Verilog_2001               ; Verilog_2001               ;
+; VHDL Version                                                     ; VHDL_1993                  ; VHDL_1993                  ;
+; State Machine Processing                                         ; Auto                       ; Auto                       ;
+; Safe State Machine                                               ; Off                        ; Off                        ;
+; Extract Verilog State Machines                                   ; On                         ; On                         ;
+; Extract VHDL State Machines                                      ; On                         ; On                         ;
+; Ignore Verilog initial constructs                                ; Off                        ; Off                        ;
+; Iteration limit for constant Verilog loops                       ; 5000                       ; 5000                       ;
+; Iteration limit for non-constant Verilog loops                   ; 250                        ; 250                        ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                         ; On                         ;
+; Infer RAMs from Raw Logic                                        ; On                         ; On                         ;
+; Parallel Synthesis                                               ; On                         ; On                         ;
+; DSP Block Balancing                                              ; Auto                       ; Auto                       ;
+; NOT Gate Push-Back                                               ; On                         ; On                         ;
+; Power-Up Don't Care                                              ; On                         ; On                         ;
+; Remove Redundant Logic Cells                                     ; Off                        ; Off                        ;
+; Remove Duplicate Registers                                       ; On                         ; On                         ;
+; Ignore CARRY Buffers                                             ; Off                        ; Off                        ;
+; Ignore CASCADE Buffers                                           ; Off                        ; Off                        ;
+; Ignore GLOBAL Buffers                                            ; Off                        ; Off                        ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                        ; Off                        ;
+; Ignore LCELL Buffers                                             ; Off                        ; Off                        ;
+; Ignore SOFT Buffers                                              ; On                         ; On                         ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                        ; Off                        ;
+; Optimization Technique                                           ; Balanced                   ; Balanced                   ;
+; Carry Chain Length                                               ; 70                         ; 70                         ;
+; Auto Carry Chains                                                ; On                         ; On                         ;
+; Auto Open-Drain Pins                                             ; On                         ; On                         ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                        ; Off                        ;
+; Auto ROM Replacement                                             ; On                         ; On                         ;
+; Auto RAM Replacement                                             ; On                         ; On                         ;
+; Auto DSP Block Replacement                                       ; On                         ; On                         ;
+; Auto Shift Register Replacement                                  ; Auto                       ; Auto                       ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto                       ; Auto                       ;
+; Auto Clock Enable Replacement                                    ; On                         ; On                         ;
+; Strict RAM Replacement                                           ; Off                        ; Off                        ;
+; Allow Synchronous Control Signals                                ; On                         ; On                         ;
+; Force Use of Synchronous Clear Signals                           ; Off                        ; Off                        ;
+; Auto RAM Block Balancing                                         ; On                         ; On                         ;
+; Auto RAM to Logic Cell Conversion                                ; Off                        ; Off                        ;
+; Auto Resource Sharing                                            ; Off                        ; Off                        ;
+; Allow Any RAM Size For Recognition                               ; Off                        ; Off                        ;
+; Allow Any ROM Size For Recognition                               ; Off                        ; Off                        ;
+; Allow Any Shift Register Size For Recognition                    ; Off                        ; Off                        ;
+; Use LogicLock Constraints during Resource Balancing              ; On                         ; On                         ;
+; Ignore translate_off and synthesis_off directives                ; Off                        ; Off                        ;
+; Timing-Driven Synthesis                                          ; On                         ; On                         ;
+; Report Parameter Settings                                        ; On                         ; On                         ;
+; Report Source Assignments                                        ; On                         ; On                         ;
+; Report Connectivity Checks                                       ; On                         ; On                         ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                        ; Off                        ;
+; Synchronization Register Chain Length                            ; 2                          ; 2                          ;
+; Power Optimization During Synthesis                              ; Normal compilation         ; Normal compilation         ;
+; HDL message level                                                ; Level2                     ; Level2                     ;
+; Suppress Register Optimization Related Messages                  ; Off                        ; Off                        ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000                       ; 5000                       ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000                       ; 5000                       ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                        ; 100                        ;
+; Clock MUX Protection                                             ; On                         ; On                         ;
+; Auto Gated Clock Conversion                                      ; Off                        ; Off                        ;
+; Block Design Naming                                              ; Auto                       ; Auto                       ;
+; SDC constraint protection                                        ; Off                        ; Off                        ;
+; Synthesis Effort                                                 ; Auto                       ; Auto                       ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                         ; On                         ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                        ; Off                        ;
+; Analysis & Synthesis Message Level                               ; Medium                     ; Medium                     ;
+; Disable Register Merging Across Hierarchies                      ; Auto                       ; Auto                       ;
+; Resource Aware Inference For Block RAM                           ; On                         ; On                         ;
++------------------------------------------------------------------+----------------------------+----------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Fri Jul 01 14:23:40 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE2_115_UART_visualization -c DE2_115_UART_visualization
+Info (20032): Parallel compilation is enabled and will use up to 2 processors
+Info (12021): Found 1 design units, including 1 entities, in source file btn_counter.v
+    Info (12023): Found entity 1: BTN_counter File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/BTN_counter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file utx.v
+    Info (12023): Found entity 1: UTx File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/UTx.v Line: 1
+Warning (10463): Verilog HDL Declaration warning at uart_trans.v(20): "byte" is SystemVerilog-2005 keyword File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/uart_trans.v Line: 20
+Info (12021): Found 1 design units, including 1 entities, in source file uart_trans.v
+    Info (12023): Found entity 1: uart_trans File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/uart_trans.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file top_uart_trans.v
+    Info (12023): Found entity 1: top_uart_trans File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/top_uart_trans.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file gen_saw.v
+    Info (12023): Found entity 1: Gen_saw File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/Gen_saw.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file gen_parabola_trans.v
+    Info (12023): Found entity 1: Gen_parabola_trans File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/Gen_parabola_trans.v Line: 1
+Warning (10463): Verilog HDL Declaration warning at CRC16_trans.v(4): "byte" is SystemVerilog-2005 keyword File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/CRC16_trans.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file crc16_trans.v
+    Info (12023): Found entity 1: CRC16_trans File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/CRC16_trans.v Line: 1
+Warning (10274): Verilog HDL macro warning at top_uart_rx.v(2): overriding existing definition for macro "number_of_bytes", which was defined in "uart_trans.v", line 2 File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/top_uart_rx.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file top_uart_rx.v
+    Info (12023): Found entity 1: top_uart_rx File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/top_uart_rx.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file receiver.v
+    Info (12023): Found entity 1: receiver File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/receiver.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file fifo_uart.v
+    Info (12023): Found entity 1: fifo_uart File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/fifo_uart.v Line: 39
+Warning (10463): Verilog HDL Declaration warning at CRC16.v(4): "byte" is SystemVerilog-2005 keyword File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/CRC16.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file crc16.v
+    Info (12023): Found entity 1: CRC16 File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/CRC16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sram_control.v
+    Info (12023): Found entity 1: SRAM_control File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/SRAM_control.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file button.v
+    Info (12023): Found entity 1: button File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/button.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sram.v
+    Info (12023): Found entity 1: SRAM File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/SRAM.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga_signals.v
+    Info (12023): Found entity 1: VGA_signals File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/VGA_signals.v Line: 1
+Warning (10229): Verilog HDL Expression warning at DE2_115_UART_visualization.v(261): truncated literal to match 7 bits File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 261
+Warning (10229): Verilog HDL Expression warning at DE2_115_UART_visualization.v(262): truncated literal to match 7 bits File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 262
+Warning (10229): Verilog HDL Expression warning at DE2_115_UART_visualization.v(263): truncated literal to match 7 bits File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 263
+Warning (10229): Verilog HDL Expression warning at DE2_115_UART_visualization.v(264): truncated literal to match 7 bits File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 264
+Warning (10229): Verilog HDL Expression warning at DE2_115_UART_visualization.v(265): truncated literal to match 7 bits File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 265
+Warning (10229): Verilog HDL Expression warning at DE2_115_UART_visualization.v(266): truncated literal to match 7 bits File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 266
+Info (12021): Found 1 design units, including 1 entities, in source file de2_115_uart_visualization.v
+    Info (12023): Found entity 1: DE2_115_UART_visualization File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file f78m75.v
+    Info (12023): Found entity 1: F78m75 File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/F78m75.v Line: 39
+Warning (10236): Verilog HDL Implicit Net warning at uart_trans.v(24): created implicit net for "next" File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/uart_trans.v Line: 24
+Error (10161): Verilog HDL error at DE2_115_UART_visualization.v(216): object "segments_saw" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 216
+Error (10161): Verilog HDL error at DE2_115_UART_visualization.v(217): object "segments_saw" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 217
+Error (10161): Verilog HDL error at DE2_115_UART_visualization.v(218): object "segments_saw" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 218
+Error (10161): Verilog HDL error at DE2_115_UART_visualization.v(219): object "segments_saw" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 219
+Error (10161): Verilog HDL error at DE2_115_UART_visualization.v(220): object "segments_saw" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 220
+Error (10161): Verilog HDL error at DE2_115_UART_visualization.v(221): object "segments_saw" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 221
+Error (10161): Verilog HDL error at DE2_115_UART_visualization.v(222): object "segments_saw" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 222
+Error (10161): Verilog HDL error at DE2_115_UART_visualization.v(223): object "segments_saw" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 223
+Error (10161): Verilog HDL error at DE2_115_UART_visualization.v(224): object "segments_saw" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 224
+Error (10161): Verilog HDL error at DE2_115_UART_visualization.v(225): object "segments_saw" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 225
+Error (10161): Verilog HDL error at DE2_115_UART_visualization.v(226): object "segments_saw" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 226
+Error (10161): Verilog HDL error at DE2_115_UART_visualization.v(227): object "segments_saw" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 227
+Error (10161): Verilog HDL error at DE2_115_UART_visualization.v(228): object "segments_saw" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 228
+Error (10161): Verilog HDL error at DE2_115_UART_visualization.v(229): object "segments_saw" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 229
+Error (10161): Verilog HDL error at DE2_115_UART_visualization.v(230): object "segments_saw" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 230
+Error (10161): Verilog HDL error at DE2_115_UART_visualization.v(231): object "segments_saw" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 231
+Error (10161): Verilog HDL error at DE2_115_UART_visualization.v(232): object "segments_saw" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 232
+Error (10161): Verilog HDL error at DE2_115_UART_visualization.v(260): object "segments_saw" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: D:/1/ИТМиВТ/Диплом бакалавриата/DE2_115_UART_visualization/DE2_115_UART_visualization.v Line: 260
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 18 errors, 11 warnings
+    Error: Peak virtual memory: 4707 megabytes
+    Error: Processing ended: Fri Jul 01 14:24:02 2022
+    Error: Elapsed time: 00:00:22
+    Error: Total CPU time (on all processors): 00:00:48
+
+
